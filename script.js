@@ -29,6 +29,15 @@ function handlePeopleListClick(event) {
   if (event.target.matches("button")) {
     event.preventDefault();
     modalEl.style.display = "block";
+    currentId = parseInt(event.target.parentElement.id);
+    var name = people[currentId].name;
+    var description = people[currentId].description;
+    modalNameEl.textContent = name;
+    if (description) {
+      descriptionEl.value = description;
+    } else {
+      descriptionEl.value = "";
+    }
   }
 }
 
@@ -40,4 +49,3 @@ peopleListEl.addEventListener("click", handlePeopleListClick);
 // Update user list and close modal when user clicks on saveBtn
 // ... YOUR CODE HERE
 
-// BONUS: register function to close the modal when the user clicks on the modal
