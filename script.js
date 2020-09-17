@@ -46,6 +46,8 @@ addBtn.addEventListener("click", addPersonToList);
 
 peopleListEl.addEventListener("click", handlePeopleListClick);
 
-// Update user list and close modal when user clicks on saveBtn
-// ... YOUR CODE HERE
-
+saveBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  people[currentId].description = descriptionEl.value;
+  close();
+});
