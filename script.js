@@ -7,7 +7,7 @@ var descriptionEl = document.querySelector("#description");
 var closeEl = document.querySelector(".close");
 var saveBtn = document.querySelector("#save");
 
-var people = [{ name: "Bob" }];
+var people = [{ name: "Ollie" }];
 var currentId = 0;
 
 // Adds person to people array and displays the person in the list.
@@ -25,11 +25,11 @@ function close() {
   modalEl.style.display = "none";
 }
 
-function handlePeopleListClick() {
-  // Use event delegation to handle when the user clicks "edit"
-  // Only show the modal if user clicked on an "edit" button
-  // Show the modal with info for the user to be edited.
-  // ... YOUR CODE HERE
+function handlePeopleListClick(event) {
+  if (event.target.matches("button")) {
+    event.preventDefault();
+    modalEl.style.display = "block";
+  }
 }
 
 closeEl.addEventListener("click", close);
